@@ -69,7 +69,7 @@
 
 <script>
 
-var diameter = 960,
+var diameter = 850,
     radius = diameter / 2,
     innerRadius = radius - 120;
 
@@ -83,7 +83,7 @@ var bundle = d3.layout.bundle();
 
 var margin = {top: 30, right: 20, bottom: 30, left: 50},
   width = 1500 - margin.left - margin.right,
-  height =1500 - margin.top - margin.bottom;
+  height =800 - margin.top - margin.bottom;
 
 
 var svg_overview = d3.select("body").append("svg")
@@ -121,13 +121,13 @@ d3.json("node.json", function(error, classes) {
       .attr("class", "link")
       .attr("d", line)
        .on('mouseover', function(d) {
-
+console.log("fdsfdsfsdf")
 
 // console.log(d.source.source);
 // console.log(d.source.target);
 // console.log(d.target.target);
 // console.log(d.target.target);
-// link.classed("link--target", function(l) { if (l.target === d) console.log("link"); })
+link.classed("link--target", function(l) { if (l.target === d) return l.source.source = true })
 
 // console.log(d.source.name);
 // console.log(d.target.name);
@@ -136,11 +136,11 @@ d3.json("node.json", function(error, classes) {
           console.log("\n\n\n\n--------------------------\n");
 
 if(d.source.name==source_var) {
- console.log("table 1: ", d.source.name.split(".")[1]);
- console.log("category 1: ", d.source.name.split(".")[0]);
+ // console.log("table 1: ", d.source.name.split(".")[1]);
+ // console.log("category 1: ", d.source.name.split(".")[0]);
 } else {
- console.log("table 1: ", source_var.split(".")[1]);
-  console.log("category 1: ", source_var.split(".")[0]);
+ // console.log("table 1: ", source_var.split(".")[1]);
+ //  console.log("category 1: ", source_var.split(".")[0]);
 }
 
 
@@ -152,11 +152,11 @@ if(d.source.name==source_var) {
 
 
 if(d.source.name==source_var) {
- console.log("table 2: ", d.target.name.split(".")[1]);
-  console.log("category 1: ", d.target.name.split(".")[0]);
+ // console.log("table 2: ", d.target.name.split(".")[1]);
+ //  console.log("category 1: ", d.target.name.split(".")[0]);
 } else {
- console.log("table 2: ", d.source.name.split(".")[1]);
-  console.log("category 1: ", d.source.name.split(".")[0]);
+ // console.log("table 2: ", d.source.name.split(".")[1]);
+ //  console.log("category 1: ", d.source.name.split(".")[0]);
 }
 
  // console.log("table 2: ", d.target.name.split(".")[1]);
